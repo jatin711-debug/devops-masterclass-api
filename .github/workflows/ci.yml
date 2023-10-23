@@ -14,7 +14,7 @@ on:
             - '.deploy/**'
     pull_request:
         branches:
-            - master
+            - main
 jobs:
     test: 
         name: Run api Tests
