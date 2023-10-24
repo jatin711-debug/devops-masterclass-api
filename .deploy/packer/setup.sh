@@ -6,18 +6,12 @@ set -x
 # Install necessary dependencies - install docker - first run update - comments
 sudo apt-get update -y 
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS:
-sudo apt-get install \
-    software-properties-common \
-    apt-transport-https \
-    dialog apt-utils \
-    ca-certificates \
-    curl \
-    gnupg \
-    snapd \
-    lsb-release -y
-
-sudo snap install docker
-
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
 sudo docker run hello-world
 # login to docker and pull down image
 sudo docker login --username $USERNAME --password $PASSWORD
