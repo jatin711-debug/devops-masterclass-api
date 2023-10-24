@@ -1,0 +1,7 @@
+{
+    "log-driver": "awslogs",
+    "log-opts": {
+        "awslogs-group": "docker-logs",
+        "awslogs-region": "ca-central-1"
+    }
+}
