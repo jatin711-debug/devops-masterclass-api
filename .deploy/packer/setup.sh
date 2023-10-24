@@ -7,10 +7,9 @@ set -x
 sudo apt-get update -y 
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS:
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-sudo apt-cache policy docker-ce
-sudo apt-get install docker-ce
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh --dry-run
+
 docker --version
 sudo docker run hello-world
 # login to docker and pull down image
