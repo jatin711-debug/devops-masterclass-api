@@ -48,5 +48,23 @@ jobs:
               run: docker build -t ${{ secrets.DOCKER_USERNAME }}/terra-project-api .
             - name: Push the Docker image
               run: docker push ${{ secrets.DOCKER_USERNAME }}/terra-project-api
+    build-ami:
+        name: Build AMI
+        runs-on: ubuntu-latest
+        env: 
+            PKR_VAR_docker_username: ${{ secrets.DOCKER_USERNAME }}
+            PKR_VAR_docker_password: ${{ secrets.DOCKER_PASSWORD }}
+        environment: nomad-stage
+        needs: build-and-push-docker-image
+        if: github.ref == 'refs/heads/main'
+        steps:
+          - uses: actions/checkout@v2
+          - run: bash .deploy/scripts/packer-install.sh
+          - run: cd .deploy/packer && packer validate image.pkr.hcl
+          - name: Build AMI
+            run: cd .deploy/packer && packer build image.pkr.hcl
+        
+
+
             
             
