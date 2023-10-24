@@ -8,6 +8,7 @@ sudo apt-get update -y
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS:
 sudo apt-get install \
     apt-transport-https \
+    dialog apt-utils \
     ca-certificates \
     curl \
     gnupg \
