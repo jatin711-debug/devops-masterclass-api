@@ -2,7 +2,7 @@ set -x
 
 sudo apt-get update
 
-suod apt-get install \
+sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
