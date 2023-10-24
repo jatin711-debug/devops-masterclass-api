@@ -6,9 +6,8 @@ sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
-    gnupg-agent \
     gnupg \
-    lab-release  -y
+    lsb-release -y
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
