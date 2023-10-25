@@ -13,6 +13,6 @@ sudo sh ./get-docker.sh
 docker --version
 sudo docker run hello-world
 # login to docker and pull down image
-sudo docker login --username $USERNAME --password $PASSWORD
+sudo docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
 docker pull johnny711dock/terra-project-api:latest
 
