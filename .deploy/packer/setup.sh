@@ -14,5 +14,5 @@ docker --version
 sudo docker run hello-world
 # login to docker and pull down image
 sudo docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-sudo docker pull johnny711dock/terra-project-api:latest
+sudo docker run johnny711dock/terra-project-api:latest
 
