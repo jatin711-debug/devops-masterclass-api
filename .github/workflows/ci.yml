@@ -11,7 +11,7 @@ on:
             - 'src/**'
             - 'Dockerfile'
             - '.github/workflows/**'
-            - '.deploy/**'
+            # - '.deploy/**'
     pull_request:
         branches:
             - main
